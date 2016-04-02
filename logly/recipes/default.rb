@@ -1,4 +1,4 @@
-directory '/tmp/itsworks' do
+directory '/tmp/hello' do
   owner 'root'
   group 'root'
   mode '0755'
