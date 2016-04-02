@@ -1,4 +1,4 @@
-directory '/tmp/itsworks' do
+directory '/tmp/myfirstcoobook' do
   owner 'root'
   group 'root'
   mode '0755'
