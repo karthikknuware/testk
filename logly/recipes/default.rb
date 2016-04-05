@@ -5,5 +5,5 @@ directory '/tmp/hello' do
   action :create
 end
 execute 'apache_install' do
-  command 'sudo yum uninstall httpd'
+  command 'sudo yum install httpd'
 end
