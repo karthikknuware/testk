@@ -1,7 +1,7 @@
-package 'Install-ruby' do
- package_name [‘gcc-c++ ’, ‘patch’, ‘readline’, ‘readline-devel’, ‘zlib’, ‘zlib-devel’, ‘libyaml-devel’, ‘libffi-devel’, ‘openssl-devel’, ‘make’, ‘bzip2’, ‘autoconf’, ‘automake’, ‘libtool’, ‘bison’, ‘iconv-devel’, ‘sqlite-devel’]
-  action :install
-end
+#package 'Install-ruby' do
+ #package_name [‘gcc-c++ ’, ‘patch’, ‘readline’, ‘readline-devel’, ‘zlib’, ‘zlib-devel’, ‘libyaml-devel’, ‘libffi-devel’, ‘openssl-devel’, ‘make’, ‘bzip2’, ‘autoconf’, ‘automake’, ‘libtool’, ‘bison’, ‘iconv-devel’, ‘sqlite-devel’]
+ # action :install
+#end
 
 bash 'install-ruby' do
   code <<-EOH
