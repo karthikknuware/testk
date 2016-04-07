@@ -1,5 +1,6 @@
 bash 'install-ruby' do
   code <<-EOH
+  sudo su
   apt-get install gcc-c++ patch readline readline-devel zlib zlib-devel 
   apt-get install libyaml-devel libffi-devel openssl-devel make 
   apt-get install bzip2 autoconf automake libtool bison iconv-devel sqlite-devel
