@@ -12,5 +12,7 @@ bash 'install-ruby' do
  gem install rails --version=4.2.6
  gem install unicorn
  rvm use ruby-2.3.0@rails4.2 --create
+ #git clone orange-web-app from orange-ntri repository
+ #run bundle install from orange-web-app cloned folder
    EOH
 end
