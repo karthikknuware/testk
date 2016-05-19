@@ -14,5 +14,6 @@ bash 'install-ruby' do
  rvm use ruby-2.3.0@rails4.2 --create
  #git clone orange-web-app from orange-ntri repository
  #run bundle install from orange-web-app cloned folder
+ #run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
    EOH
 end
