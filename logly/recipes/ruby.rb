@@ -15,5 +15,11 @@ bash 'install-ruby' do
  #git clone orange-web-app from orange-ntri repository
  #run bundle install from orange-web-app cloned folder
  #run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
+ #cd orange-web-app/config vi database.yml %change the configuration for postgres
+ #install redis
+ sudo apt-get update
+ sudo apt-get install redis-server
+ cd orange-web-app
+ rails s
    EOH
 end
