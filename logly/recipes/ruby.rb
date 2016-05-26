@@ -33,9 +33,15 @@ end
  bash "insert_line" do
   user "root"
   code <<-EOS
-  echo "AS_ADMIN_PASSWORD=admin
-        AS_ADMIN_ADMINPASSWORD=admin
-        AS_ADMIN_USERPASSWORD=admin" >> /opt/glassfish4/bin/password.txt
+  echo "development:
+        adapter: postgresql
+        encoding: utf8
+        host: diyfdb-integ2.caibfusn2myj.us-east-1.rds.amazonaws.com
+        user: gfuser
+        password: thisisareallylongpassword1
+        database: diyfdb
+        port: 5444
+        pool: 100" >> //home/ubuntu/orange-web-app/config/database.yml
   EOS
 end  
  #cd orange-web-app/config vi database.yml %change the configuration for postgres
