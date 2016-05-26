@@ -13,14 +13,17 @@ bash 'install-ruby' do
  gem install rails --version=4.2.6
  gem install unicorn
  rvm use ruby-2.3.0@rails4.2 --create
- cd /home/ubuntu
- #git clone orange-web-app from orange-ntri repository
  git clone https://github.com/karthikkoptit/rails.git
- if node[:platform_family].include?('rhel')
+ cd /home/karthik/rails
+ EOH
+end
+ #cd /home/ubuntu
+ #git clone orange-web-app from orange-ntri repository
+  if node[:platform_family].include?('rhel')
   %w( postgresql-devel openssl-devel policycoreutils
     policycoreutils-python readline-devel bzip2)
 else
-  %w( libpq-dev openssl policycoreutils libreadline-dev)
+  %w( postgresql postgresql-contrib libpq-dev)
 end.each do |package_name|
   package package_name do
     action :install
@@ -28,7 +31,7 @@ end.each do |package_name|
 end
 
  #run bundle install from orange-web-app cloned folder
- cd /home/karthik/rails
+ 
  #run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
  bash "insert_line" do
   user "root"
@@ -41,14 +44,16 @@ end
         password: thisisareallylongpassword1
         database: diyfdb
         port: 5444
-        pool: 100" >> //home/ubuntu/orange-web-app/config/database.yml
+        pool: 100" >> /home/ubuntu/orange-web-app/config/database.yml
   EOS
 end  
  #cd orange-web-app/config vi database.yml %change the configuration for postgres
  #install redis
+ bash 'install-ruby-on-rails' do
+  code <<-EOH
  sudo apt-get update
  sudo apt-get install redis-server
  cd orange-web-app
  rails s
-   EOH
+    EOH
 end
