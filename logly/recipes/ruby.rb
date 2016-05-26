@@ -1,3 +1,4 @@
+# ruby on rails
 bash 'install-ruby' do
   code <<-EOH
   curl -sSL https://rvm.io/mpapis.asc | gpg --import -
@@ -12,8 +13,22 @@ bash 'install-ruby' do
  gem install rails --version=4.2.6
  gem install unicorn
  rvm use ruby-2.3.0@rails4.2 --create
+ cd /home/ubuntu
  #git clone orange-web-app from orange-ntri repository
+ git clone https://github.com/karthikkoptit/rails.git
+ if node[:platform_family].include?('rhel')
+  %w( postgresql-devel openssl-devel policycoreutils
+    policycoreutils-python readline-devel bzip2)
+else
+  %w( libpq-dev openssl policycoreutils libreadline-dev)
+end.each do |package_name|
+  package package_name do
+    action :install
+  end
+end
+
  #run bundle install from orange-web-app cloned folder
+ cd rails
  #run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
  #cd orange-web-app/config vi database.yml %change the configuration for postgres
  #install redis
