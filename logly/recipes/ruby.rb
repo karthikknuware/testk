@@ -28,8 +28,16 @@ end.each do |package_name|
 end
 
  #run bundle install from orange-web-app cloned folder
- cd rails
+ cd /home/karthik/rails
  #run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
+ bash "insert_line" do
+  user "root"
+  code <<-EOS
+  echo "AS_ADMIN_PASSWORD=admin
+        AS_ADMIN_ADMINPASSWORD=admin
+        AS_ADMIN_USERPASSWORD=admin" >> /opt/glassfish4/bin/password.txt
+  EOS
+end  
  #cd orange-web-app/config vi database.yml %change the configuration for postgres
  #install redis
  sudo apt-get update
