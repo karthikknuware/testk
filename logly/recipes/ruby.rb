@@ -3,8 +3,8 @@ bash 'install-ruby' do
   code <<-EOH
   curl -sSL https://rvm.io/mpapis.asc | gpg --import -
   curl -L get.rvm.io | bash -s stable
-  #source /etc/profile.d/rvm.sh 
-  source /home/ubuntu/.rvm/scripts/rvm
+  source /etc/profile.d/rvm.sh 
+  #source /home/ubuntu/.rvm/scripts/rvm
  rvm reload
  rvm requirements run
  rvm install 2.3.0
