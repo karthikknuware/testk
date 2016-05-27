@@ -12,7 +12,7 @@ bash 'install-ruby' do
  rvm use ruby-2.3.0@rails4.2 --create
  gem install rails --version=4.2.6
  gem install unicorn
- rvm use ruby-2.3.0@rails4.2 --create
+ #rvm use ruby-2.3.0@rails4.2 --create
  git clone https://github.com/karthikkoptit/rails.git
  cd /home/karthik/rails
  EOH
