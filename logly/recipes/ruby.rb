@@ -31,9 +31,9 @@ end.each do |package_name|
   end
 end
 
- #run bundle install from orange-web-app cloned folder
+ run bundle install from orange-web-app cloned folder
  
- #run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
+ run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
  bash "insert_line" do
   user "root"
   code <<-EOS
