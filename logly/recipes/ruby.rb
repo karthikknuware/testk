@@ -14,7 +14,8 @@ bash 'install-ruby' do
  gem install unicorn
  #rvm use ruby-2.3.0@rails4.2 --create
  git clone https://github.com/karthikkoptit/rails.git
- cd /home/karthik/rails
+ cd /home/ubuntu/rails/orange-web-app-develop-core2-web
+ rvm rvmrc warning ignore allGemfiles
  EOH
 end
  #cd /home/ubuntu
