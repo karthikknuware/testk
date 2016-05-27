@@ -45,7 +45,7 @@ end
         password: thisisareallylongpassword1
         database: diyfdb
         port: 5444
-        pool: 100" >> /home/ubuntu/orange-web-app/config/database.yml
+        pool: 100" >> /home/ubuntu/rails/orange-web-app-develop-core2-web/config/database.yml
   EOS
 end  
  #cd orange-web-app/config vi database.yml %change the configuration for postgres
