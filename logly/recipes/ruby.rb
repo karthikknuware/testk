@@ -31,9 +31,9 @@ end.each do |package_name|
   end
 end
 
- run bundle install from orange-web-app cloned folder
+ #run bundle install from orange-web-app cloned folder
  
- run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
+# run this command before bundle install command sudo apt-get install postgresql postgresql-contrib libpq-dev 
  bash "insert_line" do
   user "root"
   code <<-EOS
@@ -50,11 +50,15 @@ end
 end  
  #cd orange-web-app/config vi database.yml %change the configuration for postgres
  #install redis
+ package 'redis-server' do
+  action :install
+end
+ 
  bash 'install-ruby-on-rails' do
   code <<-EOH
+ bundle install
  sudo apt-get update
- sudo apt-get install redis-server
- cd orange-web-app
+ cd /home/ubuntu/rails/orange-web-app-develop-core2-web
  rails s
     EOH
 end
