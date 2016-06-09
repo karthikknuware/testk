@@ -14,5 +14,12 @@ bash 'install-ruby' do
  apt-get install newrelic-sysmond
  nrsysmond-config --set license_key=46e1d325c17b0326c2d4709349d39269dd615d43
  /etc/init.d/newrelic-sysmond start
+-------------------------------------------------------------------------------------------------------------------
+ #for Centos
+ rpm -Uvh https://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm
+yum install newrelic-sysmond
+nrsysmond-config --set license_key=46e1d325c17b0326c2d4709349d39269dd615d43
+/etc/init.d/newrelic-sysmond start
+ 
     EOH
 end
